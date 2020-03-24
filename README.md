@@ -47,7 +47,7 @@ _Question 1.2_: What do we know about the input data we'll be using?
 
 _Answer_: `salaries` and `positions` are two __parallel__ lists. This means that, for example, `salaries[3]` (the 4th element in `salaries` list) is the salary for `positions[3]` in the `positions` list.
 
-_Questioni 1.3_: What does it mean to __split__ salaries by position to get a list of salaries corresonding to each position? Is there a specific data structure that would model this kind of grouping?
+_Questioni 1.3_: What does it mean to __split__ salaries by position to get a list of salaries corresponding to each position? Is there a specific data structure that would model this kind of grouping?
 
 _Answer_: YES! Splitting by some criterion (such playing position) means to associate criterion's values ('PG', 'PF', 'C', 'SF', 'SG') with something else (such as salary of player satisfying that criterion value). The data structure that maintains this kind of associations is a __dictionary__. In our case, each position is a __key__ and the list of corresponding salaries to that position is a __value__.
 
