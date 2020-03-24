@@ -12,14 +12,18 @@ class TestHighestSalarybyPos(unittest.TestCase):
     """
     Tests for highest_salary_by_pos() method
     """
+    def setUp(self):
+        """
+        Define attribute p to hold object of type Problems
+        """
+        self.p = NBATop()
 
     def test_one(self):
         """
         Test case a single top player
         """
         nba_data = [['tom'], [1000], ['PG']]
-        p = NBATop(nba_data)
-        actual_result = p.highest_salary_by_pos()
+        actual_result = self.p.highest_salary_by_pos(nba_data)
         expected_result = {'PG': 1000}
         self.assertDictEqual(actual_result, expected_result)
 
@@ -65,10 +69,14 @@ class TestHighestSalarybyPos(unittest.TestCase):
         nba_data.append(list(names))
         nba_data.append(list(salaries))
         nba_data.append(list(positions))
-
-        p = NBATop(nba_data)
-        actual_result = p.highest_salary_by_pos()
-        expected_result = None
+        actual_result = self.p.highest_salary_by_pos(nba_data)
+        expected_result = {
+                 'PG': 37457154,
+                 'PF': 32088932,
+                 'SF': 31214295,
+                 'SG': 27739975,
+                 'C': 25434262
+        }
         self.assertDictEqual(actual_result, expected_result)
 
 
